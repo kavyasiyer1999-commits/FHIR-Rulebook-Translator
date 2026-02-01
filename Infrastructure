@@ -1,0 +1,24 @@
+# Source to Target Mapping (STM)
+
+| Source Column | Description       | FHIR Resource | FHIR Element |
+|---------------|------------------|---------------|--------------|
+| patient_id    | Legacy ID         | Patient       | Patient.id   |
+| name          | Full name         | Patient       | Patient.name.text |
+| birthDate     | Date of birth     | Patient       | Patient.birthDate |
+| gender        | Gender of patient | Patient       | Patient.gender |
+
+# System Architecture
+
+This project implements a minimal FHIR-based architecture using a Translator and Rulebook.
+
+## Architecture Flow
+
+Source Data → Translator → Rulebook → FHIR Resources
+
+## Components
+
+### Translator
+Converts source system data into FHIR-compliant JSON format.
+
+### Rulebook
+Validates the generated FHIR resources against defined business and data rules.
